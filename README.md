@@ -1,6 +1,10 @@
 # rancher-test
 
+![Rancher Multicloud](images/overview-multicloud.png)
+
 Getting familiar with Rancher
+
+[In addition to the providers listed above, Rancher also supports Microsoft Azure (both via VMs and Azure Kubernetes Service).]
 
 ## Motivation
 
@@ -8,11 +12,17 @@ Getting familiar with Rancher
 
 This is an option for anyone who does not wish to use `helm`.
 
-Of course, under the covers Rancher actually uses `helm` itself, but sometimes a dashboard is handy.
+Of course, under the covers Rancher actually uses `helm` itself, but sometimes a graphical user interface is handy.
 
 Rancher also offers a CLI tool.
 
 ## Run with Docker
+
+As it's possible to run Rancher with Docker, we will start with that.
+
+First we will launch the Docker container, then we will configure some options.
+
+#### Docker Run
 
 ```bash
 $ docker run --name helm_rancher --restart=unless-stopped -p 80:80 -p 443:443 rancher/rancher
@@ -263,13 +273,17 @@ time="2019-03-21 16:57:01" level=info msg="Listening on 0.0.0.0:8114"
 [My usual practice is to specify a version for Docker images but here we are evaluating
  Rancher - so we definitely want the ___latest___ version.]
 
-This will make out Rancher server available at:
+This will make our Rancher server available at:
 
     https://localhost
+
+#### Set Rancher Password
 
 First, we will need to set a password:
 
 ![Rancher start](images/Rancher_start.png)
+
+#### Set Rancher URL
 
 Next we need to specify a URL:
 
@@ -295,6 +309,12 @@ Rancher offers a nice dark theme:
 * minikube __v0.35.0__
 * Rancher __v2.1.7__
 * virtualbox __5.1.38__
+
+## Reference
+
+Using Rancher for load balancing:
+
+    https://rancher.com/docs/rancher/v1.1/en/cattle/adding-load-balancers/
 
 ## To Do
 
